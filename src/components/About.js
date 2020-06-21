@@ -7,13 +7,13 @@ const FlatAbout =  require('../Models/about_generated').About
 export default class About extends React.Component {
 
     state = {
-      name: "Mustafa Khalil",
+      name: null,
       about: null,
       isFetching: true
     }
   
-    componentWillMount() {
-      instance.get("/apis/v1/about", {
+    componentDidMount() {
+      instance.get("/api/v1/about", {
         responseType: "arraybuffer"
       })
       .then((buffer) => {
@@ -34,7 +34,7 @@ export default class About extends React.Component {
       return (
         <div className="App">
           <Section name={this.state.name}/>
-          <div className="white" dangerouslySetInnerHTML={{ __html: this.state.about }}></div>
+          <div className="about Text" dangerouslySetInnerHTML={{ __html: this.state.about }}></div>
           <div className="icons">
               <ul id="horizontal-list">
                   <li>
