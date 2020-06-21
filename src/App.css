@@ -1,0 +1,85 @@
+.Body {
+  background-color: #131415;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: calc(10px + 2vmin);
+  padding-top: 2rem;
+}
+
+.Text {
+  color: white;
+  text-align: center;
+}
+
+.Container {
+  text-align: center;
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+.white {
+  color: white;
+}
+
+.HeaderText {
+  color: white;
+  margin: 6px;
+}
+
+.Header {
+  background-color: #9A56A2;
+  max-height: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(8px + 2vmin);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+ul#horizontal-list {
+  list-style: none;
+  padding-top: 20px;
+  padding-inline-start: 0px;
+}
+
+ul#horizontal-list li {
+  display: inline;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.Icons {
+  color: #ffffff;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+.projects {
+  padding-top: 1rem;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 3rem;
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 80%;
+}
+
