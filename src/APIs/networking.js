@@ -9,7 +9,6 @@ export default axios.create({
       'Accept-Version': 1,
       'Accept': 'application/octet-stream',
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Max-Age': 1,
       'Content-Type': 'application/octet-stream',
     },
 })
