@@ -32,6 +32,7 @@
 }
 
 .HeaderText {
+  z-index: 100;
   color: white;
   margin: 6px;
 }
@@ -110,11 +111,31 @@ ul#horizontal-list li {
   font-weight: 700;
 }
 
+.details-bigscreen {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .details-normal {
+  display: flex;
+  flex-direction:column;
   width: 60%;
 }
+
 .details-small {
   width: 100%;
+}
+
+.screenshot-small {
+  width: 100%;
+  align-items: center;
+  margin-top: 2rem;
+}
+.screenshot-normal {
+  display: flex;
+  flex-direction:column;
+  width: 40%;
 }
 
 .spacing-left {
@@ -132,4 +153,8 @@ ul#horizontal-list li {
 
 .li {
   list-style-type: none;
+}
+
+.detailstext {
+  margin: 10px;
 }
