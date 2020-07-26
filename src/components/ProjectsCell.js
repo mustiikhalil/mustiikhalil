@@ -1,7 +1,10 @@
-import React from 'react';
-import instance from "../APIs/networking"
-import Section from './Section';
-import Buttons from './Buttons';
+import React from 'react'
+import Buttons from './Buttons'
+import Views from './DetailsView'
+import ScreenShotsView from './ScreenShotsView'
+
+const DetailsView = Views.DetailsView;
+const ButtonsView = Views.ButtonsView;
 
 const ProjectsCell = props => {
     const obj = props.obj
@@ -10,39 +13,18 @@ const ProjectsCell = props => {
       var link = obj.links(i)
       buttons.push(<Buttons key={link.type()} obj={link}/>)
     }
-    let width = window.innerWidth;
-    let detailsCSS = width < 1000 ? "details-small white": "details-normal white";
+    let isMobile = window.innerWidth < 1300
+    let containerView = isMobile ? "" : "details-bigscreen";
     return (
-        <li className="cell"> 
+        <li className="cell">
           <div> <h1 className="white">{obj.name()}</h1> </div>
-          <p className={detailsCSS}>{obj.details()}</p>
-          <TechStack stack={obj}/>
-          <div className="buttons-container">
-            {buttons}
+          <div className={containerView}>
+            <DetailsView obj={obj} buttons={buttons} isMobile={isMobile}/>
+            <ScreenShotsView obj={obj} isMobile={isMobile}/>
+            {isMobile ? ButtonsView(buttons) : ""}
           </div>
         </li>
     )
 };
-
-const TechStack = (props) => {
-  var obj = props.stack
-  if (obj.techStackLength() === 0) {
-    return null;
-  }
-  var stacks = []
-  for (var i = 0; i < obj.techStackLength(); i++) {
-    var stack = obj.techStack(i)
-    stacks.push(<li className="li" key={stack}>{stack}</li>)
-  }
-
-  return (
-    <div>
-      <p className="white">Tech Stack: </p>
-      <ul className="white">
-        {stacks}
-      </ul>
-    </div>
-  )
-}
 
 export default ProjectsCell;
