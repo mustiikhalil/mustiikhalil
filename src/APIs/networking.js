@@ -6,7 +6,6 @@ export default axios.create({
     baseURL: uri,
     timeout: 5000,
     headers: {
-      'Accept-Version': 1,
       'Accept': 'application/octet-stream',
       'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/octet-stream',
