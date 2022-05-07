@@ -28,6 +28,7 @@ jobs:
           git config user.name "Automated"
           git config user.email "actions@users.noreply.github.com"
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/mustiikhalil/mmk-website.git
+          npm run build
           cp -R assets build/
           npm run deploy
 
